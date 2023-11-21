@@ -12,10 +12,10 @@ class User {
    * @param {string} email - The email address of the user.
    * @param {number} edad - The age of the user.
    */
-  constructor(name, email, edad)  {
-    this.Name = name;
+  constructor(name, email, edad) {
+    this.name = name;
     this.email = email;
-    this.age = edad;
+    this.age = this.age;
     this.loggedIn = false;
   }
 
@@ -49,7 +49,7 @@ class User {
    * @return {boolean} True if the user is eligible to vote, false otherwise.
    */
   canVote() {
-    return this.age >= 18
+    return this.age >= 18;
   }
 
   /**
@@ -60,10 +60,9 @@ class User {
    * @throws {Error} Throws an error if the recipient is not logged in.
    * @return {string} The message to be sent to another user.
    */
-  sendmessage(recipient, message) 
-  {
+  sendmessage(recipient, message) {
     if (!recipient.isLoggedIn()) {
-      throw new Error(`${recipient.name} is not logged in.`) ;
+      throw new Error(`${recipient.name} is not logged in.`);
     }
 
     // Send the message to the recipient
