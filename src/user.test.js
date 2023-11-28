@@ -26,3 +26,18 @@ test('UsuarioPuede Votar', () => {
 test('Usuario No puede votar', () => {
   expect(youngUser.canVote()).toBeFalsy();
 });
+test('Usuario Nombre', () => {
+  expect(aUser.name).toBe('Ada');
+});
+
+test('Usuario Email', () => {
+  expect(aUser.email).toBe('ada@internet.uy');
+});
+
+test('Usuario Edad', () => {
+  expect(aUser.age).toBe(20);
+});
+test('Usuario no Vota sin no esta Logeado', () => {
+  aUser.logout();
+  expect(aUser.canVote()).toBeFalsy();
+});
